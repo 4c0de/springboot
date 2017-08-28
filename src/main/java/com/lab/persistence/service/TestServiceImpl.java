@@ -10,8 +10,9 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService
 {
-
-     //inyectamos iMapper
+    
+     //inyectamos iMapper para utilizar los servicios implementados
+    
   @Autowired
   TestMapper iMapper;
 
