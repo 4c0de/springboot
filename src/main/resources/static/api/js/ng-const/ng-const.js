@@ -1,3 +1,4 @@
+//desarrollado por alfonso para simplificar el tema de windows.location.host y demás.
 const GBL_COFG =
 {
   protocol: window.location.protocol,

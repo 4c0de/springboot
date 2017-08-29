@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<!--ng-app= le pones el nombre que quieras   
+ng-mas nombre.
+ng-app="app" este app
+
+
+-->
 <html lang="es" ng-app="app">
   <head>
     <meta charset="utf-8" />
@@ -20,8 +27,10 @@
       <li><a href="#!/pagina2">Ir a la pagina 2</a>
       </li>
     </ul>
-
+    
     <div ng-view></div>
+    
+    <!--aqui insertará la vista y el js asociado que coincida en el module-app.-->
 
     <script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
     <script type="text/javascript" src="/ng-controller/ng-app-controller-template2.js"></script>

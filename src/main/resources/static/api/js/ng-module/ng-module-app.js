@@ -1,4 +1,6 @@
-var app = angular.module('app', ['ngRoute'])
+//Viene del index  ng-app="app"> le pasamos parametro ngRoute para las redirecciones./
+//creamos el modulo y lo realacionamos con el html
+var app = angular.module('app', ['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
   $locationProvider)
@@ -7,12 +9,15 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
 
 
     $routeProvider.otherwise(
-    {
+    { 
+      //cuando no encuentra la ruta
       redirectTo: '/'
     })
-
+    //cuando encuentra la ruta 
     .when('/pagina1',
-    {
+    { 
+      //GBL_COF esta desarrollado por alfonso. /
+      //Se carga el template con el controlador
       templateUrl: GBL_COFG.urlTemplate('pagina1.html'),
       controller: 'ng-app-controller-template1'
     })
@@ -24,6 +29,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
     });
   }]);
 
+//recibe una cadena y un array que tiene en el indice 0 un string y en el indice 1 una funcion.
 app.directive('apploading', ['$http', function ($http)
   {
     var loading =
@@ -38,7 +44,7 @@ app.directive('apploading', ['$http', function ($http)
 
         scope.$watch(scope.isLoading, function (v)
         {
-          console.log(JSON.stringify(elm) + ' ' + JSON.stringify(attrs))
+          
           if (v)
           {
             elm[0].classList.add('appLoading');

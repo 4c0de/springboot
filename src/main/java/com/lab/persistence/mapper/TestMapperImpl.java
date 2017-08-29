@@ -25,8 +25,19 @@ public class TestMapperImpl implements TestMapper
   @Override
   public List<TestModel> testMapper(TestModel obj) throws Exception
   {
-
+      //prueba 
+      System.out.println(obj.getId());
     List<TestModel> x = new ArrayList<>();
+    
+    TestModel a = new TestModel();
+    a.setId(0);
+    x.add(a);
+    x.add(obj);
+    obj.setId(10);
+     x.add(obj);
+     obj.setId(20);
+      x.add(obj);
+      
 
     /**
      * CONECTANDO A LA BBDD.
@@ -71,6 +82,7 @@ public class TestMapperImpl implements TestMapper
       System.out.println();
 
       x.add(table);
+     
     }
     /**
      * DESCONECTANDO A LA BBDD.
