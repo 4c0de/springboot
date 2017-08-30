@@ -1,0 +1,179 @@
+    *
+            {
+                padding: 0;
+                margin: 0;
+                    
+            }
+
+
+            .cuerpo{
+                    background: #F498B0;
+                    height: 400px;
+                    width: 400px;
+                    border-radius: 50%;
+                    border: 10px solid #000;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    top: 150px;
+                    left:400px;
+                    z-index: 4;
+
+
+            }
+            
+       
+            
+            #circuloExterior{
+                width: 60px;
+                height: 100px;
+                position: absolute;
+                border: 2px solid black; 
+                background: #005ea7;
+                border-radius: 100px 100px 100px 100px;
+                top:90px;
+               
+            }
+            
+            #circuloBlanco{
+                width: 20px;
+                height: 30px;
+                border-radius: 50px 50px 50px 50px;
+                background: white;
+                position: absolute;
+                left: 20px;
+                top:15px;
+          
+              
+               
+            }
+
+            #circuloExterior2{
+                width: 60px;
+                height: 100px;
+                position: absolute;
+                border: 2px solid black; 
+                background: #005ea7;
+                border-radius: 100px 100px 100px 100px;
+                top:90px;
+                left: 100px;
+               
+            }
+            
+            #circuloBlanco2{
+                width: 30px;
+                height: 60px;
+                border-radius: 40px 40px 40px 40px;
+                background: white;
+                position: absolute;
+                left: 15px;
+                top:5px;
+          
+              
+               
+            }
+
+            .boca{
+                position: absolute;
+                 width: 50px; 
+                 height: 50px;
+                 top: 250px;
+                 left: 150px;
+                 background: #F16769;
+                 border: 3px solid #000; 
+                border-radius: 0px 50px 50px 0px;
+                   transform: rotate(90deg);
+
+              
+         
+                 
+
+            }
+            .mofleteIzq{
+             width: 60px;
+                height: 70px;
+               position: absolute;
+                background: #f2717f;
+                border-radius: 100px 100px 100px 100px;
+                right: 100px;                             
+                bottom: 100px;
+            }  
+            .mofleteDe{
+             width: 60px;
+                height: 70px;
+               position: absolute;
+                background: #f2717f;
+                border-radius: 100px 100px 100px 100px;
+                left: 50px;                             
+                bottom: 100px;
+            } 
+
+            .prueba{
+                width: 40px;
+                height: 30px;
+            }
+            .pieIzq{
+                height: 100px;
+                width: 100px;
+                border-radius: 0px 50px 50px 0px;
+                position: absolute;
+                top: 340px;
+                left: 220px;
+                background: #DE003D;
+                border: 2px solid #000;
+                transform: rotate(270deg);
+            }
+
+              .pieDe{
+                height: 100px;
+                width: 100px;
+                border-radius: 0px 50px 50px 0px;
+                position: absolute;
+                top: 340px;
+                left: 80px;
+                background: #DE003D;
+                border: 2px solid #000;
+                transform: rotate(270deg);
+            }
+
+            #circuloAzul{
+                 width: 60px;
+                height: 85px;
+                
+                background: black;
+                border-radius: 100px 100px 100px 100px;
+                top:90px;
+                left: 100px;
+
+            }
+
+            .ala1{
+            height: 200px;
+            width: 140px;
+            border-radius: 50%;
+            position: absolute;
+            right: -80px;
+            top: 40px;
+           
+            background: #F498B0;
+            border: 10px solid #000;
+            transform: rotate(-65deg);
+            }
+
+            .ala2{
+            height: 200px;
+            width: 140px;
+            border-radius: 50%;
+            position: absolute;
+            right: 350px;
+            top: 40px;
+           
+            background: #F498B0;
+            border: 10px solid #000;
+            transform: rotate(-65deg);
+            }
+              
+              
+
+          
+            

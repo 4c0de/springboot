@@ -17,9 +17,13 @@ app.config(['$routeProvider', '$locationProvider',
       templateUrl: GBL_COFG.urlTemplate('pagina1.html'),
       controller: 'ng-app-controller-template1'
     })
+    .when('/about',
+    {
+      templateUrl: GBL_COFG.urlTemplate('about.html')
+    })
     .when('/pagina2',
     {
-      templateUrl: GBL_COFG.urlTemplate('test-bbdd.html')
+      templateUrl: GBL_COFG.urlTemplate('pagina2.html')
    
     });
   }]);
