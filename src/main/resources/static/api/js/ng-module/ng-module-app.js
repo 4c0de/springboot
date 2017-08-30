@@ -1,36 +1,32 @@
-//Viene del index  ng-app="app"> le pasamos parametro ngRoute para las redirecciones./
-//creamos el modulo y lo realacionamos con el html
 var app = angular.module('app', ['ngRoute']);
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
-  $locationProvider)
+
+app.config(['$routeProvider', '$locationProvider',
+  function ($routeProvider, $locationProvider)
   {
-//    $locationProvider.html5Mode(true);
-
-
     $routeProvider.otherwise(
-    { 
-      //cuando no encuentra la ruta
+    {
       redirectTo: '/'
     })
-    //cuando encuentra la ruta 
+    .when('/',
+    {
+      templateUrl: GBL_COFG.urlTemplate('inicial.html')
+    })
     .when('/pagina1',
-    { 
-      //GBL_COF esta desarrollado por alfonso. /
-      //Se carga el template con el controlador
+    {
       templateUrl: GBL_COFG.urlTemplate('pagina1.html'),
       controller: 'ng-app-controller-template1'
     })
-
     .when('/pagina2',
     {
-      templateUrl: GBL_COFG.urlTemplate('pagina2.html'),
-      controller: 'ng-app-controller-template2'
+      templateUrl: GBL_COFG.urlTemplate('test-bbdd.html')
+   
     });
   }]);
 
-//recibe una cadena y un array que tiene en el indice 0 un string y en el indice 1 una funcion.
-app.directive('apploading', ['$http', function ($http)
+
+app.directive('apploading',
+['$http', function ($http)
   {
     var loading =
     {
@@ -44,7 +40,6 @@ app.directive('apploading', ['$http', function ($http)
 
         scope.$watch(scope.isLoading, function (v)
         {
-          
           if (v)
           {
             elm[0].classList.add('appLoading');
@@ -59,5 +54,6 @@ app.directive('apploading', ['$http', function ($http)
 
     return loading;
   }]);
+
 
 

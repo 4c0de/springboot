@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-
-<!--ng-app= le pones el nombre que quieras   
-ng-mas nombre.
-ng-app="app" este app
-
-
--->
 <html lang="es" ng-app="app">
   <head>
     <meta charset="utf-8" />
-    <title>Titulo</title>
-    <link type="text/css" rel="stylesheet"  href="/api/css/normalizer.min.css"/>
+    <title>Prueba</title>
+
+    <link type="text/css" rel="stylesheet"  href="/api/css/normalizer.css"/>
+    
+
     <script type="text/javascript" src="/api/js/lib/ng-angular.min.js"></script>
     <script type="text/javascript" src='/api/js/lib/ng-angular-route.min.js'></script>
-
-    <script type="text/javascript" src='/api/js/ng-const/ng-const.min.js'></script>
-
-    <script type="text/javascript" src="/api/js/ng-module/ng-module-app.min.js"></script>
-
+    <script type="text/javascript" src='/api/js/ng-const/ng-const.js'></script>
+    <script type="text/javascript" src="/api/js/ng-module/ng-module-app.js"></script>
   </head>
-  <body apploading> 
-     
-    <ul>
-      <li><a href="#!/pagina1">Ir a la pagina 1</a>
-      </li>
-      <li><a href="#!/pagina2">Ir a la pagina 2</a>
-      </li>
-    </ul>
-    
-    <div ng-view></div>
-    
-    <!--aqui insertará la vista y el js asociado que coincida en el module-app.-->
-
-    <script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
+  <body apploading>
+    <header id="header">
+      <nav>
+        <ul>
+          <li>
+            <a href="#!/">Inicio</a>
+          </li>
+          <li>
+            <a href="#!/pagina1">Test BBDD</a>
+          </li> 
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper"> 
+      <div ng-view></div>
+    </div>
+    <footer id="footer">
+      <a href="#!/about"></a>
+    </footer>
+<script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
     <script type="text/javascript" src="/ng-controller/ng-app-controller-template2.js"></script>
   </body>
 </html>

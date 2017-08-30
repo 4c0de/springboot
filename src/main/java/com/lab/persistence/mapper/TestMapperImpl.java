@@ -26,17 +26,9 @@ public class TestMapperImpl implements TestMapper
   public List<TestModel> testMapper(TestModel obj) throws Exception
   {
       //prueba 
-      System.out.println(obj.getId());
-    List<TestModel> x = new ArrayList<>();
     
-    TestModel a = new TestModel();
-    a.setId(0);
-    x.add(a);
-    x.add(obj);
-    obj.setId(10);
-     x.add(obj);
-     obj.setId(20);
-      x.add(obj);
+    List<TestModel> x = new ArrayList<>();
+
       
 
     /**
