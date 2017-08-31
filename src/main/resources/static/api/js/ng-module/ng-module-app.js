@@ -24,7 +24,8 @@ app.config(['$routeProvider', '$locationProvider',
     
      .when('/buscador',
     {
-      templateUrl: GBL_COFG.urlTemplate('buscador.html')
+      templateUrl: GBL_COFG.urlTemplate('buscador.html'),
+      controller: 'ng-app-controller-buscador'
     })
     .when('/pagina2',
     {

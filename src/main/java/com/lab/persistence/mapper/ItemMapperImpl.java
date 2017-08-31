@@ -17,7 +17,7 @@ public class ItemMapperImpl implements ItemMapper
 
 
   @Override
-  public List<ItemModel> ItemMapper(ItemModel obj) throws Exception
+  public List<ItemModel> ItemMapper(ItemModel objeto) throws Exception
   {
     List<ItemModel> lista = new ArrayList<>();
 
@@ -26,7 +26,7 @@ public class ItemMapperImpl implements ItemMapper
      */
     db.conecta();
 
-    String sql = "SELECT * FROM items where (nombre LIKE '%" + obj.getNombre() + "%')";
+    String sql = "SELECT * FROM items where (nombre LIKE '%" + objeto.getNombre() + "%')";
 
     ResultSet rs = db.consulta(sql);
     while (rs.next())
@@ -37,8 +37,8 @@ public class ItemMapperImpl implements ItemMapper
       item.setNombre(rs.getString("nombre"));
       item.setDescripcion(rs.getString("descripcion"));
       item.setUrl(rs.getString("url"));
-
       lista.add(item);
+       
     }
     /**
      * DESCONECTANDO A LA BBDD.

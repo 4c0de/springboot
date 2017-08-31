@@ -1,2 +1,35 @@
-app.controller('ng-app-controller-buscador,
+app.controller('ng-app-controller-buscador',
 ['$scope', '$http', '$timeout', function ($scope, $http, $timeout)
+  {
+    var timer =
+    {
+      search:
+      {
+        id: null,
+        ms: 750
+      }
+    };
+
+    $scope.searchFn = function (e)
+    {
+      var value = e.target.value;
+
+      $timeout.cancel(timer.search.id);
+      timer.search.id = $timeout(function ()
+      {
+        $http.post('/buscador',
+        {
+          nombre: value
+        })
+        .then(function (response)
+        {
+          var data = response.data;
+
+          $scope.items = data;
+          console.log(items);
+        });
+
+      }, timer.search.ms);
+    };
+
+  }]);
