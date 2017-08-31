@@ -1,17 +1,16 @@
 
 
 
-<div id="imagen"></div>
 
 <div id="buscar">
   <fieldset id="searchWrapper">
-    <input id="in" type="text" ng-keyup="searchFn($event)" placeholder="Buscar Item"/>
+      <input id="in" type="text" ng-keyup="searchFn($event)" placeholder="Buscar Item"/>
   </fieldset>
 
   <div id="items">
     <article ng-repeat="item in items track by $index" name="item-{{item.id}}">
       <section>
-        <figure style="background-image: url('{{item.url}}')">
+        <figure  style="background-image: url('{{item.url}}')">
         </figure>
         <div>
           <h1>{{item.nombre}}</h1>

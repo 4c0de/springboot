@@ -9,11 +9,11 @@ app.controller('ng-app-controller-buscador',
         ms: 750
       }
     };
-
+     
     $scope.searchFn = function (e)
     {
       var value = e.target.value;
-
+      
       $timeout.cancel(timer.search.id);
       timer.search.id = $timeout(function ()
       {
@@ -31,5 +31,5 @@ app.controller('ng-app-controller-buscador',
 
       }, timer.search.ms);
     };
-
+    
   }]);
