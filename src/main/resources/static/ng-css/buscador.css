@@ -31,7 +31,7 @@
 }
 
 
-#buscar #items
+ #items
 {
   float: left;
   clear: both;
@@ -40,14 +40,14 @@
   
 }
 
-#buscar #items article
+ #items article
 {
   width: 30%;
   float: left;
   padding: 20px;
 }
 
-#buscar #items article > * > figure
+ #items article > * > figure
 {
   float: left;
   width: 100%;
