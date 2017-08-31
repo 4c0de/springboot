@@ -21,6 +21,11 @@ app.config(['$routeProvider', '$locationProvider',
     {
       templateUrl: GBL_COFG.urlTemplate('about.html')
     })
+    
+     .when('/buscador',
+    {
+      templateUrl: GBL_COFG.urlTemplate('buscador.html')
+    })
     .when('/pagina2',
     {
       templateUrl: GBL_COFG.urlTemplate('pagina2.html')
