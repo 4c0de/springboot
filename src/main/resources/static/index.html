@@ -10,9 +10,10 @@
       <link type="text/css" rel="stylesheet"  href="/ng-css/about.css"/>
       <link type="text/css" rel="stylesheet"  href="/ng-css/buscador.css"/>
       <link type="text/css" rel="stylesheet"  href="/ng-css/inicial.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
  
- 
-    
+      
+
 
     <script type="text/javascript" src="/api/js/lib/ng-angular.min.js"></script>
     <script type="text/javascript" src='/api/js/lib/ng-angular-route.min.js'></script>
@@ -22,22 +23,35 @@
   </head>
   <body apploading>
     <header id="header">
-      <nav>
-        <ul>
-          <li>
-            <a href="#!/">Inicio</a>
-          </li>
-          <li>
-            <a href="#!/pagina1">Test BBDD</a>
-          </li>
-            <li>
-            <a href="#!/pagina2">kirby</a>
-          </li>
-          <li>
-             <a href="#!/buscador">Buscador</a> 
-          </li>
-        </ul>
-      </nav>
+    <div id="barra-lateral">
+			<div id="logo-menu">
+			</div>
+
+			<div id="contenedor-logos-primero" class="contenedor-logos">
+				<div class="logo">
+				</div>
+				<a class="enlace" href="#!/"><p class="title-menu">Inicio</p></a>
+			</div>
+
+			<div class="contenedor-logos">
+				<div class="logo">
+				</div>
+                                <a class="enlace" href="#!/buscador"><p class="title-menu">Buscador</p></a>
+			</div>
+
+			<div class="contenedor-logos">
+				<div class="logo">
+				</div>
+				<a class="enlace" href="#!/kirby"><p class="title-menu">Kirby</p></a>
+			</div>
+
+			<div class="contenedor-logos">
+				<div class="logo">
+				</div>
+				<a class="enlace" href="#!/pagina1"><p class="title-menu">Test</p></a>
+			</div>
+    </div>
+		
     </header>
     <div id="wrapper"> 
       <div ng-view></div>
@@ -45,7 +59,7 @@
     <footer id="footer">
       <a href="#!/about"></a>
     </footer>
-<script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
+<script type="text/javascript" src="/ng-controller/ng-app-controller-bbdd.js"></script>
 <script type="text/javascript" src="/ng-controller/ng-app-controller-buscador.js"></script>
  
   </body>

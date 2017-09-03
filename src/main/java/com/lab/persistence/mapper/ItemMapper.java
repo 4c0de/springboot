@@ -1,21 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.lab.persistence.mapper;
 
 import com.lab.persistence.model.ItemModel;
 import java.util.List;
 
-/**
- *
- * @author Lenovo
- */
+
+  /**
+   * Metodo que devuelve todos los elementos almacenados en la bbdd basado en la busqueda.
+   *
+   * @param objeto Objeto tipo ItemModel.
+   *
+   * @return Lista de objetos tipo ItemModel.
+   */
+
 public interface ItemMapper {
     
-    public List<ItemModel> ItemMapper(ItemModel obj) throws Exception;
+    public List<ItemModel> ItemMapper(ItemModel objeto) throws Exception;
+    
+    
+   /**
+   * Devuelve todos los elementos almacenados en la bbdd.
+   *
+   * @param objeto Objeto tipo ItemModel.
+   *
+   * @return Lista de objetos tipo ItemModel.
+   */
+
+    public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception;
     
 }
+
+
 
 

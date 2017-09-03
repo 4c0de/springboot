@@ -1,27 +1,18 @@
-    *
-            {
-                padding: 0;
-                margin: 0;
-                    
-            }
 
+        .cuerpo{
+                background: #F498B0;
+                height: 400px;
+                width: 400px;
+                border-radius: 50%;
+                border: 10px solid #000;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                top:150px;
+                left: 35%;
+        }
 
-            .cuerpo{
-                    background: #F498B0;
-                    height: 400px;
-                    width: 400px;
-                    border-radius: 50%;
-                    border: 10px solid #000;
-                    position: relative;
-                    display: flex;
-                    justify-content: center;
-                    top: 150px;
-                    left:400px;
-                    z-index: 4;
-
-
-            }
-            
        
             
             #circuloExterior{

@@ -15,7 +15,7 @@ app.config(['$routeProvider', '$locationProvider',
     .when('/pagina1',
     {
       templateUrl: GBL_COFG.urlTemplate('pagina1.html'),
-      controller: 'ng-app-controller-template1'
+      controller: 'ng-app-controller-bbdd'
     })
     .when('/about',
     {
@@ -27,14 +27,14 @@ app.config(['$routeProvider', '$locationProvider',
       templateUrl: GBL_COFG.urlTemplate('buscador.html'),
       controller: 'ng-app-controller-buscador'
     })
-    .when('/pagina2',
+    .when('/kirby',
     {
-      templateUrl: GBL_COFG.urlTemplate('pagina2.html')
+      templateUrl: GBL_COFG.urlTemplate('kirby.html')
    
     });
   }]);
 
-
+//directiva para cargar y remover la clase de carga para el gif
 app.directive('apploading',
 ['$http', function ($http)
   {

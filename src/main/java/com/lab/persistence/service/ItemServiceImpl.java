@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.lab.persistence.service;
 
 import com.lab.persistence.mapper.ItemMapper;
@@ -27,6 +23,11 @@ public class ItemServiceImpl implements ItemService {
     public List<ItemModel> listaItem(ItemModel objeto) throws Exception {
      
         return iMapper.ItemMapper(objeto);
+    }
+
+    @Override
+    public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception {
+        return iMapper.listaCompletaItem(objeto);
     }
     
 }

@@ -13,7 +13,7 @@ public class ItemMapperImpl implements ItemMapper
 {
 
   @Autowired
-  BBDD db;
+  BBDD basedatos;
 
 
   @Override
@@ -22,30 +22,65 @@ public class ItemMapperImpl implements ItemMapper
     List<ItemModel> lista = new ArrayList<>();
 
     /**
-     * CONECTANDO A LA BBDD.
+     * Conectando a la bbdd
      */
-    db.conecta();
+    basedatos.conecta();
 
     String sql = "SELECT * FROM items where (nombre LIKE '%" + objeto.getNombre() + "%')";
 
-    ResultSet rs = db.consulta(sql);
-    while (rs.next())
+    ResultSet resultado = basedatos.consulta(sql);
+    while (resultado.next())
     {
       ItemModel item = new ItemModel();
 
-      item.setId(rs.getInt("id"));
-      item.setNombre(rs.getString("nombre"));
-      item.setDescripcion(rs.getString("descripcion"));
-      item.setUrl(rs.getString("url"));
+      item.setId(resultado.getInt("id"));
+      item.setNombre(resultado.getString("nombre"));
+      item.setDescripcion(resultado.getString("descripcion"));
+      item.setUrl(resultado.getString("url"));    
+      item.setCategoria(resultado.getString("categoria"));
       lista.add(item);
        
     }
     /**
-     * DESCONECTANDO A LA BBDD.
+     * Desconectando de la bbdd
      */
-    db.desconecta();
+    basedatos.desconecta();
 
     return lista;
   }
+
+    @Override
+    public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception {
+       
+    List<ItemModel> lista = new ArrayList<>();
+
+    /**
+     * Conectando a la bbdd
+     */
+    basedatos.conecta();
+
+    String sql = "SELECT * FROM items";
+
+    ResultSet resultado = basedatos.consulta(sql);
+    while (resultado.next())
+    {
+      ItemModel item = new ItemModel();
+
+      item.setId(resultado.getInt("id"));
+      item.setNombre(resultado.getString("nombre"));
+      item.setDescripcion(resultado.getString("descripcion"));
+      item.setUrl(resultado.getString("url"));
+        item.setCategoria(resultado.getString("categoria"));
+      lista.add(item);
+       
+    }
+    /**
+     * Desconectando con la bbdd
+     */
+    basedatos.desconecta();
+
+    return lista;
+  }
+        
 
 }

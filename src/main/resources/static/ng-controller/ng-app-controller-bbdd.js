@@ -1,6 +1,6 @@
 
   
-  app.controller('ng-app-controller-template1',
+  app.controller('ng-app-controller-bbdd',
 ['$scope', '$http', '$timeout', function ($scope, $http, $timeout)
   {
     $scope.testOk = false;

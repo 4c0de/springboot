@@ -1,25 +1,36 @@
 
 
 
-
-<div id="buscar">
-  <fieldset id="searchWrapper">
-      <input id="in" type="text" ng-keyup="searchFn($event)" placeholder="Buscar Item"/>
+    
+  <fieldset id="envoltorio">
+      <input id="campobuscar" type="text" class="form-control center-block" ng-keyup="busqueda($event)" placeholder="Buscar"/>
+      <div class="contador">
+          <p id="resultado">{{resultado}}</p>
+      </div>				  
   </fieldset>
+ 
 
-  <div id="items">
-    <article ng-repeat="item in items track by $index" name="item-{{item.id}}">
-      <section>
-        <figure  style="background-image: url('{{item.url}}')">
-        </figure>
-        <div>
-          <h1>{{item.nombre}}</h1>
-          <p>
-            {{item.descripcion}}
-          </p>
-        </div>
-      </section>
-    </article>
-  </div>
 
-</div>
+<div class="container-fluid">	
+    <table id="tabla"  class="table table-hover">
+
+        <tr id="nombres">
+            <th>Nombre</th> 
+            <th>Categoría</th>
+            <th>Descripción</th>  
+            <th>Imagen</th> 
+        </tr>     
+        <tr id="campos" ng-repeat="element in items">
+            <td>{{element.nombre}}</td>
+            <td>{{element.categoria}}</td>
+            <td>{{element.descripcion}}</td>
+            <td>
+
+                <img class="zoom" id="img" ng-src="{{element.url}}"/>    
+            </td>
+
+        </tr>
+    </table>
+</div>   
+    
+
