@@ -13,7 +13,9 @@
       })
       .then(function (response)
       {
+        
         var data = response.data;
+        
 
         $scope.testOk = true;
         $scope.bbdd = data;

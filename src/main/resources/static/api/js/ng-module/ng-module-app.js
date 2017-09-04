@@ -12,14 +12,15 @@ app.config(['$routeProvider', '$locationProvider',
     {
       templateUrl: GBL_COFG.urlTemplate('inicial.html')
     })
-    .when('/pagina1',
+    .when('/testbbdd',
     {
-      templateUrl: GBL_COFG.urlTemplate('pagina1.html'),
+      templateUrl: GBL_COFG.urlTemplate('testbbdd.html'),
       controller: 'ng-app-controller-bbdd'
     })
     .when('/about',
     {
-      templateUrl: GBL_COFG.urlTemplate('about.html')
+      templateUrl: GBL_COFG.urlTemplate('about.html'),
+      controller: 'ng-app-controller-timeout'
     })
     
      .when('/buscador',

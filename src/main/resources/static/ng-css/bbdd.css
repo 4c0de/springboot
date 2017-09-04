@@ -64,3 +64,7 @@
 {
   padding: 5px;
 }
+
+#boton{
+    display:inherit;
+}

@@ -30,6 +30,7 @@ app.controller('ng-app-controller-buscador',
     $scope.busqueda = function (e)
     {
       var valor = e.target.value;
+      var colorContador =document.querySelector('#resultado');
       
       $timeout.cancel(tiempo.buscar.id);
       tiempo.buscar.id = $timeout(function ()
@@ -46,10 +47,20 @@ app.controller('ng-app-controller-buscador',
           
           //para mostrar el numero de elementos encontrados 
           $scope.resultado=data.length;
+          //mostramos longitud por consola
           console.log(JSON.stringify(data.length));
           
           //mostrar items
           $scope.items = data;
+          
+          //Si no encontrado ponemos el contador numerico a rojo
+          if (data.length===0){
+              colorContador.style.color="#FF0000";
+          }else{
+              //ponemos a blanco si longitud es mayor que cero
+              colorContador.style.color="#FFFFFF";
+              
+          }
          
         });
 
