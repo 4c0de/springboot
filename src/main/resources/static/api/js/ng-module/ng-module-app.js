@@ -20,7 +20,7 @@ app.config(['$routeProvider', '$locationProvider',
     .when('/about',
     {
       templateUrl: GBL_COFG.urlTemplate('about.html'),
-      controller: 'ng-app-controller-timeout'
+      controller: 'ng-app-controller-about'
     })
     
      .when('/buscador',

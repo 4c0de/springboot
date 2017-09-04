@@ -1,12 +1,15 @@
 
   
   app.controller('ng-app-controller-bbdd',
-['$scope', '$http', '$timeout', function ($scope, $http, $timeout)
+['$scope', '$http', '$timeout','utilFactory', function ($scope, $http, $timeout, utilFactory)
   {
     $scope.testOk = false;
 
     $scope.test = function ()
     {
+      //usamos utilFactory(app.factory) para almacenar las veces que se realiza el test de la bbddd  
+      utilFactory. setContadortBBDD(utilFactory.getContadorBBDD() + 1);
+      
       $http.post('/test',
       {
         table: 'propiedad del objeto'
