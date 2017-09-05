@@ -27,7 +27,24 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception {
-        return iMapper.listaCompletaItem(objeto);
+        List<ItemModel> lista= iMapper.listaCompletaItem(objeto);
+        
+       //Metodo que llamamos para reemplazar las busquedas por el subrayado.
+        //this.sustituir(lista,objeto);
+        //vamos a devolver ya la lista con los campos ya reemplazados.
+        return lista;
     }
+
+//    private void sustituir(List<ItemModel> lista, ItemModel objeto) {
+//        
+//        for (int i = 0; i < lista.size(); i++) {
+//          
+//            
+//        }
+//      
+//    }
     
+
 }
+
+

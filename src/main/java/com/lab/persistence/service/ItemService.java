@@ -18,6 +18,4 @@ public interface ItemService {
 
     public List<ItemModel> listaCompletaItem(ItemModel objeto)throws Exception;
     
-    
-    
 }

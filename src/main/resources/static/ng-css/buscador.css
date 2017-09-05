@@ -22,6 +22,8 @@
     
   
     }
+    
+    
   #principal  #resultado{
         color: white;
     }
@@ -95,3 +97,9 @@
   transform-origin: -2px 20px;
   
 }
+
+.lupa:hover{
+    transform : scale(2);
+}
+
+/*FIN LUPA*/

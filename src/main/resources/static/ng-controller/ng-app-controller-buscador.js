@@ -38,8 +38,9 @@ app.controller('ng-app-controller-buscador',
         //peticion post a mapping /buscador  
         $http.post('/buscador',
         {
-          //propiedad que le vamos al back  
-          nombre: valor
+          //propiedad que le mandamos al back  
+          nombre: valor,
+          categoria: valor
         })
         .then(function (respuesta)
         {
@@ -61,6 +62,7 @@ app.controller('ng-app-controller-buscador',
               colorContador.style.color="#FFFFFF";
               
           }
+          
          
         });
 
