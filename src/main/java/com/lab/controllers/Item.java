@@ -2,6 +2,7 @@
 package com.lab.controllers;
 
 import com.lab.persistence.model.ItemModel;
+import com.lab.persistence.model.PesoItems;
 import com.lab.persistence.service.ItemService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,11 +51,23 @@ public class Item {
 
     return lista;      
 
-  }    
+  }
+  
+   
+ //mapeamos listaPeso
+   @ResponseBody
+  @RequestMapping(value = "/listaPeso",
+                  method = RequestMethod.POST,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  
+  public List<ItemModel> listadotest(@RequestBody PesoItems objeto) throws Exception
+  {
+       
+    List<ItemModel> lista = iService.listaPeso(objeto);
+
+    return lista;     
+  }
 
 
 }
  
-    
-    
-

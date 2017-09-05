@@ -2,6 +2,7 @@
 package com.lab.persistence.mapper;
 import com.lab.persistence.mapper.bbdd.BBDD;
 import com.lab.persistence.model.ItemModel;
+import com.lab.persistence.model.PesoItems;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +86,44 @@ public class ItemMapperImpl implements ItemMapper
 
     return lista;
   }
+    
+    @Override
+    public List<ItemModel> listaPeso(PesoItems objeto)throws Exception{
+        
+         List<ItemModel> lista = new ArrayList<>();
+
+    /**
+     * Conectando a la bbdd
+     */
+    basedatos.conecta();
+
+    String sql = "SELECT * FROM items INNER JOIN pesoitem ON items.id=pesoitem.iditem";
+
+    ResultSet resultado = basedatos.consulta(sql);
+    while (resultado.next())
+    {
+      ItemModel item = new ItemModel();
+      item.setId(resultado.getInt("id"));
+      item.setNombre(resultado.getString("nombre"));
+      item.setDescripcion(resultado.getString("descripcion"));
+      item.setUrl(resultado.getString("url"));
+        item.setCategoria(resultado.getString("categoria"));
+      lista.add(item);
+       
+    }
+    /**
+     * Desconectando con la bbdd
+     */
+    basedatos.desconecta();
+
+    return lista;
+        
+        
+        
+        
+        
+        
+    }
     
 
 }

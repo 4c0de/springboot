@@ -26,6 +26,18 @@ app.controller('ng-app-controller-buscador',
             });
     })();
     
+  /**
+   * funcion que vamos a usar para comprobar si variable valor es un string o un numero.
+   * 
+   * @param {type} param---->Es igual a var valor---->osease campo de busqueda en el input html del  buscador.
+   * @returns {String}---->Lo hemos utilizado para en $htttp.post mande a un controlador u otro.
+   */
+  
+    function isPeso(param)
+    {
+        return isNaN(param)?'/buscador':'/listaPeso';
+    }
+    
      
     $scope.busqueda = function (e)
     {
@@ -36,11 +48,13 @@ app.controller('ng-app-controller-buscador',
       tiempo.buscar.id = $timeout(function ()
       {
         //peticion post a mapping /buscador  
-        $http.post('/buscador',
+        $http.post(isPeso(valor),
         {
           //propiedad que le mandamos al back  
           nombre: valor,
-          categoria: valor
+          categoria: valor,
+          peso:valor
+        
         })
         .then(function (respuesta)
         {
@@ -50,7 +64,6 @@ app.controller('ng-app-controller-buscador',
           $scope.resultado=data.length;
           //mostramos longitud por consola
           console.log(JSON.stringify(data.length));
-          
           //mostrar items
           $scope.items = data;
           

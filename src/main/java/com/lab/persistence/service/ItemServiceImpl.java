@@ -3,6 +3,7 @@ package com.lab.persistence.service;
 
 import com.lab.persistence.mapper.ItemMapper;
 import com.lab.persistence.model.ItemModel;
+import com.lab.persistence.model.PesoItems;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,17 +35,23 @@ public class ItemServiceImpl implements ItemService {
         //vamos a devolver ya la lista con los campos ya reemplazados.
         return lista;
     }
-
-//    private void sustituir(List<ItemModel> lista, ItemModel objeto) {
-//        
-//        for (int i = 0; i < lista.size(); i++) {
-//          
-//            
-//        }
-//      
-//    }
     
-
+////    private void sustituir(List<ItemModel> lista, ItemModel objeto) {
+////        
+////        for (int i = 0; i < lista.size(); i++) {
+////          
+////            
+////        }
+////      
+////    }
+//  
+      @Override
+      public List<ItemModel> listaPeso(PesoItems objeto)throws Exception{
+            List<ItemModel> lista= iMapper.listaPeso(objeto);
+            
+            return lista;
+      }
+              
 }
 
 
