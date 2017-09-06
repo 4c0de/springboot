@@ -24,7 +24,11 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public List<ItemModel> listaItem(ItemModel objeto) throws Exception {
      
-        return iMapper.ItemMapper(objeto);
+        List<ItemModel> lista =iMapper.ItemMapper(objeto);
+          //Metodo que llamamos para reemplazar las busquedas por el subrayado.
+        //vamos a devolver ya la lista con los campos ya reemplazados.
+         List<ItemModel> listaReplace = this.listaReplace(objeto, lista);
+         return listaReplace;
     }
     
     
@@ -39,11 +43,7 @@ public class ItemServiceImpl implements ItemService {
     public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception {
         List<ItemModel> lista= iMapper.listaCompletaItem(objeto);
         
-       //Metodo que llamamos para reemplazar las busquedas por el subrayado.
-        //vamos a devolver ya la lista con los campos ya reemplazados.
-         List<ItemModel> listaReplace = this.listaReplace(objeto, lista);
-
-        return listaReplace;
+        return lista;
     }
     
     //metodo privado para el reemplazo.
@@ -54,6 +54,7 @@ public class ItemServiceImpl implements ItemService {
     {
       item.setNombre(this.pattern(objeto.getNombre()).matcher(item.getNombre()).replaceAll(this.patternReplace(objeto.getNombre())));
       item.setDescripcion(this.pattern(objeto.getDescripcion()).matcher(item.getDescripcion()).replaceAll(this.patternReplace(objeto.getDescripcion())));
+      item.setCategoria(this.pattern(objeto.getCategoria()).matcher(item.getCategoria()).replaceAll(this.patternReplace(objeto.getCategoria())));
     }
 
     return lista;
@@ -66,7 +67,7 @@ public class ItemServiceImpl implements ItemService {
 
   private String patternReplace(String str)
   {
-    return "<strong class=\"found\">" + str + "</strong>";
+    return "<span class=\"marcado\">" + str + "</span>";
   }
 
 

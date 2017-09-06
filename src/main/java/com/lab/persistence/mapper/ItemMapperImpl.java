@@ -31,7 +31,8 @@ public class ItemMapperImpl implements ItemMapper
      * de búsqueda
     */
     String sql = "SELECT * FROM items where (nombre LIKE '%" + objeto.getNombre() + "%')" +
-             "OR (categoria LIKE '%" + objeto.getCategoria() + "%')";
+             "OR (categoria LIKE '%" + objeto.getCategoria() + "%')"+
+             "OR (descripcion LIKE '%" + objeto.getDescripcion() + "%')";
 
     ResultSet resultado = basedatos.consulta(sql);
     while (resultado.next())

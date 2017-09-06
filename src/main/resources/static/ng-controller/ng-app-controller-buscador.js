@@ -51,9 +51,10 @@ app.controller('ng-app-controller-buscador',
         //peticion post a mapping que redireccionará a un lado u otro segun la funcion isPeso.
         $http.post(isPeso(valor),
         {
-          //propiedad que le mandamos al back  
+          //propiedades que le mandamos al back  
           nombre: valor,
           categoria: valor,
+          descripcion:valor,
           peso:valor
         
         })
