@@ -29,6 +29,14 @@ public interface ItemMapper {
 
     public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception;
     
+    
+/**
+ * Devuelve una lista de elementos según unos criterios de busqueda basado en peso.
+ * @param objeto Objeto de tipo Pesoitems
+ * @return Lista de objetos de tipo ItemModel.
+ * @throws Exception 
+ */
+    
     public List<ItemModel> listaPeso(PesoItems objeto)throws Exception;
     
     

@@ -19,6 +19,7 @@ app.controller('ng-app-controller-buscador',
         .then(function(respuesta)
             {
               var data =respuesta.data;  
+              //Mostrar items
               $scope.items=data;
               
           //para mostrar el numero de elementos encontrados en contador
@@ -47,7 +48,7 @@ app.controller('ng-app-controller-buscador',
       $timeout.cancel(tiempo.buscar.id);
       tiempo.buscar.id = $timeout(function ()
       {
-        //peticion post a mapping /buscador  
+        //peticion post a mapping que redireccionará a un lado u otro segun la funcion isPeso.
         $http.post(isPeso(valor),
         {
           //propiedad que le mandamos al back  
@@ -67,15 +68,13 @@ app.controller('ng-app-controller-buscador',
           //mostrar items
           $scope.items = data;
           
+           //ponemos a blanco el contador numerico
+           colorContador.style.color="#FFFFFF";
           //Si no encontrado ponemos el contador numerico a rojo
           if (data.length===0){
               colorContador.style.color="#FF0000";
-          }else{
-              //ponemos a blanco si longitud es mayor que cero
-              colorContador.style.color="#FFFFFF";
-              
           }
-          
+             
          
         });
 

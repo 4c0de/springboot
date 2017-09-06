@@ -5,6 +5,7 @@ import com.lab.persistence.mapper.ItemMapper;
 import com.lab.persistence.model.ItemModel;
 import com.lab.persistence.model.PesoItems;
 import java.util.List;
+import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,33 +26,52 @@ public class ItemServiceImpl implements ItemService {
      
         return iMapper.ItemMapper(objeto);
     }
+    
+    
+    @Override
+    public List<ItemModel> listaPeso(PesoItems objeto)throws Exception{
+      List<ItemModel> lista= iMapper.listaPeso(objeto);
+
+      return lista;
+}
 
     @Override
     public List<ItemModel> listaCompletaItem(ItemModel objeto) throws Exception {
         List<ItemModel> lista= iMapper.listaCompletaItem(objeto);
         
        //Metodo que llamamos para reemplazar las busquedas por el subrayado.
-        //this.sustituir(lista,objeto);
         //vamos a devolver ya la lista con los campos ya reemplazados.
-        return lista;
+         List<ItemModel> listaReplace = this.listaReplace(objeto, lista);
+
+        return listaReplace;
     }
     
-////    private void sustituir(List<ItemModel> lista, ItemModel objeto) {
-////        
-////        for (int i = 0; i < lista.size(); i++) {
-////          
-////            
-////        }
-////      
-////    }
-//  
-      @Override
-      public List<ItemModel> listaPeso(PesoItems objeto)throws Exception{
-            List<ItemModel> lista= iMapper.listaPeso(objeto);
-            
-            return lista;
-      }
-              
+    //metodo privado para el reemplazo.
+     private List<ItemModel> listaReplace(ItemModel objeto, List<ItemModel> lista)
+  {
+
+    for (ItemModel item : lista)
+    {
+      item.setNombre(this.pattern(objeto.getNombre()).matcher(item.getNombre()).replaceAll(this.patternReplace(objeto.getNombre())));
+      item.setDescripcion(this.pattern(objeto.getDescripcion()).matcher(item.getDescripcion()).replaceAll(this.patternReplace(objeto.getDescripcion())));
+    }
+
+    return lista;
+  }
+
+  private Pattern pattern(String str)
+  {
+    return Pattern.compile("(?i)" + str);
+  }
+
+  private String patternReplace(String str)
+  {
+    return "<strong class=\"found\">" + str + "</strong>";
+  }
+
+
+
+
 }
 
 

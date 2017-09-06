@@ -3,13 +3,16 @@ package com.lab.persistence.model;
 
 /**
  *
- * @author Lenovo
+ * @Clase PesoItems
  */
+
+
 public class PesoItems {
+    //atributos
     int id;
     int  peso;
     int iditem;
-
+    //Getters and Setters
     public int getId() {
         return id;
     }

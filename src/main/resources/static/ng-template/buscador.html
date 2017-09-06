@@ -24,9 +24,11 @@
         </tr> 
      
         <tr id="campos" ng-repeat="element in items">
-            <td>{{element.nombre}}</td>
-            <td>{{element.categoria}}</td>
-            <td>{{element.descripcion}}</td>
+            <td ng-bind-html="element.nombre"></td>
+            <td ng-bind-html="element.categoria"></td>
+            <td ng-bind-html="element.descripcion"></td>
+            
+            <td> 
             <td>
 
                 <img class="zoom" id="img" ng-src="{{element.url}}"/>    

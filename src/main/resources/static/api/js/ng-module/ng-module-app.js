@@ -1,5 +1,7 @@
-var app = angular.module('app', ['ngRoute']);
+//inicializamos modulo app
+var app = angular.module('app', ['ngRoute','ngSanitize']);
 
+//ngRoute encargado de las redirecciones.
 
 app.config(['$routeProvider', '$locationProvider',
   function ($routeProvider, $locationProvider)

@@ -1,3 +1,5 @@
+
+/*Div que envuelve el input, resultado y lupa*/
 #principal{
     position: relative;
    top: 70px;
@@ -40,7 +42,8 @@
 }
 #tabla{
     
-  border: solid 2px #D8D8D8;
+  border: solid 1px #D8D8D8;
+
   
 }
 
@@ -51,11 +54,13 @@
 
 }
 
+
+
 #campos > td {
    font-size: 15px;
    font-family: cursive;
-}
 
+}
 
 /*Zoom imagen */
 .zoom{
@@ -103,3 +108,4 @@
 }
 
 /*FIN LUPA*/
+

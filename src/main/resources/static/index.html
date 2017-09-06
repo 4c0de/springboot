@@ -2,7 +2,7 @@
 <html lang="es" ng-app="app">
   <head>
     <meta charset="utf-8" />
-    <title>Prueba</title>
+    <title>Springboot Angularjs</title>
 <!--declaracion css-->
      <link type="text/css" rel="stylesheet"  href="/api/css/normalizer.css"/>
      <link type="text/css" rel="stylesheet"  href="/ng-css/kirby.css"/>
@@ -10,16 +10,18 @@
       <link type="text/css" rel="stylesheet"  href="/ng-css/about.css"/>
       <link type="text/css" rel="stylesheet"  href="/ng-css/buscador.css"/>
       <link type="text/css" rel="stylesheet"  href="/ng-css/inicial.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="/api/css/bootstrap.min.css"/>
  
   
 <!--Declaracion script-->
-    
+   
     <script type="text/javascript" src="/api/js/lib/ng-angular.min.js"></script>
     <script type="text/javascript" src='/api/js/lib/ng-angular-route.min.js'></script>
+    <script type="text/javascript" src='/api/js/lib/ngSanitize.min.js'></script>
     <script type="text/javascript" src='/api/js/ng-const/ng-const.js'></script>
     <script type="text/javascript" src="/api/js/ng-module/ng-module-app.js"></script>
     <script type="text/javascript" src="/api/js/ng-factory/ng-factory-app.js"></script>
+ 
    
   </head>
   <body apploading ng-controller="ng-app-controller-index">
@@ -60,7 +62,7 @@
     <footer id="footer">
       <a href="#!/about"></a>
     </footer>
-
+<!--declaracion de script controladores-->
 <script type="text/javascript" src="/ng-controller/ng-app-controller-index.js"></script>
 <script type="text/javascript" src="/ng-controller/ng-app-controller-bbdd.js"></script>
 <script type="text/javascript" src="/ng-controller/ng-app-controller-about.js"></script>

@@ -64,6 +64,7 @@ public class ItemMapperImpl implements ItemMapper
      */
     basedatos.conecta();
 
+     //Sentencia SQL que devuelve todos los campos de la tabla items.
     String sql = "SELECT * FROM items";
 
     ResultSet resultado = basedatos.consulta(sql);
@@ -96,8 +97,15 @@ public class ItemMapperImpl implements ItemMapper
      * Conectando a la bbdd
      */
     basedatos.conecta();
-
-    String sql = "SELECT * FROM items INNER JOIN pesoitem ON items.id=pesoitem.iditem";
+    
+     /**
+     * Sentencia que devuelve todos los campos de la tabla items en donde el id sea igual
+     *  al iditem de tabla pesoitem y peso sea igual a criterio de busqueda.
+     */
+   
+    String sql = "SELECT * FROM items where id IN"
+            + "(SELECT iditem from pesoitem where peso ="+objeto.getPeso()+")";
+    
 
     ResultSet resultado = basedatos.consulta(sql);
     while (resultado.next())
