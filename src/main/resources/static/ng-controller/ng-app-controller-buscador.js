@@ -1,5 +1,5 @@
 app.controller('ng-app-controller-buscador',
-['$scope', '$http', '$timeout', function ($scope, $http, $timeout)
+['$scope', '$http','$timeout',  function ($scope, $http, $timeout)
   {
     var tiempo =
     {
@@ -27,6 +27,32 @@ app.controller('ng-app-controller-buscador',
             });
     })();
     
+    //funcion borrar elemento
+    $scope.borrar = function(elemento)
+    {
+      
+       $http.post('borrar',
+       {
+           id:elemento
+         })
+       .then(function ()
+        {
+          //cuando borramos para realizar una nueva petición post y mostrar la lista actualizada.  
+          $http.post('listado',{})
+                .then(function(respuesta)
+                    {
+                      var data =respuesta.data;  
+                      //Mostrar items
+                      $scope.items=data;
+                      //para mostrar el numero de elementos encontrados en contador
+                       $scope.resultado=data.length;
+                    });
+           
+        }); 
+     
+ 
+    };  
+    
   /**
    * funcion que vamos a usar para comprobar si variable valor es un string o un numero.
    * 
@@ -39,6 +65,7 @@ app.controller('ng-app-controller-buscador',
         return isNaN(param)?'/buscador':'/listaPeso';
     }
     
+  
      
     $scope.busqueda = function (e)
     {
@@ -56,6 +83,7 @@ app.controller('ng-app-controller-buscador',
           categoria: valor,
           descripcion:valor,
           peso:valor
+          
         
         })
         .then(function (respuesta)

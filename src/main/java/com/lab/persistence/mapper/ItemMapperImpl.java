@@ -33,6 +33,7 @@ public class ItemMapperImpl implements ItemMapper
     String sql = "SELECT * FROM items where (nombre LIKE '%" + objeto.getNombre() + "%')" +
              "OR (categoria LIKE '%" + objeto.getCategoria() + "%')"+
              "OR (descripcion LIKE '%" + objeto.getDescripcion() + "%')";
+      
 
     ResultSet resultado = basedatos.consulta(sql);
     while (resultado.next())
@@ -133,6 +134,33 @@ public class ItemMapperImpl implements ItemMapper
         
         
     }
-    
 
+    @Override
+    public void  borrar(ItemModel objeto) throws Exception {
+         
+
+    /**
+     * Conectando a la bbdd
+     */
+      basedatos.conecta();
+
+    /**sentencia para borrar elementos de la bbdds que coincidan con el id.
+    */
+        
+     String sql = "DELETE FROM items where id = "+objeto.getId()+"";
+    // String sql = "DELETE FROM items where id IN"
+     //       + "(DELETE FROM pesoitem where iditem ="+objeto.getId()+")";
+    //lanzamos la consulta
+    basedatos.updates(sql);
+    
+ 
+    /**
+     * Desconectando de la bbdd
+     */
+    basedatos.desconecta();
+
+ 
+
+    }
+   
 }

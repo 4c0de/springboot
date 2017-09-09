@@ -39,6 +39,8 @@ public interface ItemMapper {
     
     public List<ItemModel> listaPeso(PesoItems objeto)throws Exception;
     
+     public void borrar(ItemModel objeto)throws Exception;
+    
     
 
 }

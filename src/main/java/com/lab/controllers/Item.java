@@ -67,6 +67,21 @@ public class Item {
 
     return lista;     
   }
+  
+  
+   //mapeamos borrar
+   @ResponseBody
+  @RequestMapping(value = "/borrar",
+                  method = RequestMethod.POST,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  
+  public void borrar(@RequestBody ItemModel objeto) throws Exception
+  {
+       
+    
+
+    iService.borrar(objeto);     
+  }
 
 
 }

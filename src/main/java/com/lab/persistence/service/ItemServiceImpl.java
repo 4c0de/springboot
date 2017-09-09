@@ -70,6 +70,11 @@ public class ItemServiceImpl implements ItemService {
     return "<span class=\"marcado\">" + str + "</span>";
   }
 
+    @Override
+    public void borrar(ItemModel objeto) throws Exception {
+     iMapper.borrar(objeto);
+    }
+
 
 
 
