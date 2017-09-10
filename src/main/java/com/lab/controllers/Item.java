@@ -82,6 +82,19 @@ public class Item {
 
     iService.borrar(objeto);     
   }
+  
+  
+     //mapeamos borrar
+   @ResponseBody
+  @RequestMapping(value = "/insertar",
+                  method = RequestMethod.POST,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  
+  public void insertar(@RequestBody ItemModel objeto) throws Exception
+  {
+
+    iService.insertar(objeto);     
+  }
 
 
 }

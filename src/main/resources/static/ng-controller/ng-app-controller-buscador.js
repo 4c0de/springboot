@@ -1,5 +1,5 @@
 app.controller('ng-app-controller-buscador',
-['$scope', '$http','$timeout',  function ($scope, $http, $timeout)
+['$scope', '$http','$timeout', '$location', function ($scope, $http, $timeout, $location)
   {
     var tiempo =
     {
@@ -26,6 +26,13 @@ app.controller('ng-app-controller-buscador',
           $scope.resultado=data.length;
             });
     })();
+    
+     //funcion añadir  elementos
+    $scope.add = function()
+    {
+      $location.path("/insertar");
+ 
+    };
     
     //funcion borrar elemento
     $scope.borrar = function(elemento)

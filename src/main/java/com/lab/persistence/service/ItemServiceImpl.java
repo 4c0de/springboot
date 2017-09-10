@@ -76,6 +76,10 @@ public class ItemServiceImpl implements ItemService {
     }
 
 
+    @Override
+    public void insertar(ItemModel objeto) throws Exception {
+      iMapper.insertar(objeto);
+    }
 
 
 }

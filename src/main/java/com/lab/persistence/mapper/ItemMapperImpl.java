@@ -162,5 +162,35 @@ public class ItemMapperImpl implements ItemMapper
  
 
     }
+    
+    @Override
+    public void  insertar(ItemModel objeto) throws Exception {
+         
+
+    /**
+     * Conectando a la bbdd
+     */
+      basedatos.conecta();
+
+    /**sentencia para insertar  elementos  en la bbdd
+    */
+
+      String sql = "INSERT INTO items  VALUES (default,'"+objeto.getNombre()+"','"+objeto.getDescripcion()+"','"+objeto.getUrl()+"','"+objeto.getCategoria()+"')";
+    
+        
+   //lanzamos la consulta
+    basedatos.updates(sql);
+    
+ 
+    /**
+     * Desconectando de la bbdd
+     */
+    basedatos.desconecta();
+
+ 
+
+    }
+ 
+    
    
 }

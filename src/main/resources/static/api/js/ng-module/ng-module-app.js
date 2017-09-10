@@ -30,6 +30,11 @@ app.config(['$routeProvider', '$locationProvider',
       templateUrl: GBL_COFG.urlTemplate('buscador.html'),
       controller: 'ng-app-controller-buscador'
     })
+      .when('/insertar',
+    {
+      templateUrl: GBL_COFG.urlTemplate('insertar.html'),
+      controller: 'ng-app-controller-insertar'
+    })
     .when('/kirby',
     {
       templateUrl: GBL_COFG.urlTemplate('kirby.html')
